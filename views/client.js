@@ -12,4 +12,23 @@
     // Add event listener to table with an arrow function
     var el = document.getElementById("outside");
     el.addEventListener("click", () => { modifyText("four"); }, false);
+
+    function e(e) {
+      clearTimeout(a), a = setTimeout(function() {
+        s()
+      }, 200)
+    }
+
+    function s() {
+        u.innerHTML = l.value;
+    }
+
+
+
+    var a, l = document.querySelector("#input"),
+        u = document.querySelector("#result");
+    l.addEventListener("input", e, !1), s(), l.select()
+
+
+
   });

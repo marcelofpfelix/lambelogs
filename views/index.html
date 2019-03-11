@@ -33,11 +33,13 @@
       <textarea id="input" spellcheck="false" contenteditable="true">
         {:webserver=>{:services=>{:dns=>{:service_name=>"dns",:service_type=>"web",:service_instance=>"default",:disable_basic_auth=>true}},"cron"=>{"auto_purge"=>false,"notify_failures"=>false},"mailer"=>{"imap"=>{"host"=>"10.10.10.10","port"=>193}}}}
       </textarea>
+
       <pre id="result"></pre>
       <table id="outside">
         <tr><td id="t1">one</td></tr>
         <tr><td id="t2">two</td></tr>
       </table>
+
     </div>
 
     <form class="form-horizontal" action="/myform" method="GET" role="form" required style="width: 95%;">
