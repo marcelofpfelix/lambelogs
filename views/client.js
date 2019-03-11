@@ -1,34 +1,21 @@
 
-  console.log('Client-side code running');
+console.log('Client-side code running');
 
-  // Function to change the content of t2
-  function modifyText(new_text) {
-    var t2 = document.getElementById("t2");
-    t2.firstChild.nodeValue = new_text;
+  // event listener to check when the DOM finished loading.
+document.addEventListener('DOMContentLoaded', function () {
+
+  function timer() {
+    clearTimeout(asd), asd = setTimeout(function() { write_output() }, 200)
   }
 
-    // event listener to check when the DOM finished loading.
-  document.addEventListener('DOMContentLoaded', function () {
-    // Add event listener to table with an arrow function
-    var el = document.getElementById("outside");
-    el.addEventListener("click", () => { modifyText("four"); }, false);
+  function write_output() {
+      output_text.innerHTML = input_text.value;
+  }
 
-    function e(e) {
-      clearTimeout(a), a = setTimeout(function() {
-        s()
-      }, 200)
-    }
-
-    function s() {
-        u.innerHTML = l.value;
-    }
+  var asd, input_text = document.querySelector("#input"),
+      output_text = document.querySelector("#result");
+  input_text.addEventListener("input", timer, !1), write_output(), input_text.select()
 
 
 
-    var a, l = document.querySelector("#input"),
-        u = document.querySelector("#result");
-    l.addEventListener("input", e, !1), s(), l.select()
-
-
-
-  });
+});
