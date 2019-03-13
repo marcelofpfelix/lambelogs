@@ -21,45 +21,32 @@
           </ul>
       </nav>
       </div>
-      <br/>
-      <div class="jumbotron"> <p>
-        This is place to put content. You can put slider, short description about your website and place some links for navigation.
+
+      <!-- <div class="jumbotron">
+        <p>
+        short description TODO
         </p>
-      </div>
-    </div>
-    <br/>
-
-    <div id="container">
-      <textarea id="input" spellcheck="false" contenteditable="true">  {:webserver=>{:services=>{:dns=>{:service_name=>"dns",:service_type=>"web",:service_instance=>"default",:disable_basic_auth=>true}},"cron"=>{"auto_purge"=>false,"notify_failures"=>false},"mailer"=>{"imap"=>{"host"=>"10.10.10.10","port"=>193}}}}
-      </textarea>
-
-      <pre id="result"></pre>
-      <table id="outside">
-        <tr><td id="t1">one</td></tr>
-        <tr><td id="t2">two</td></tr>
-      </table>
-
+      </div> -->
     </div>
 
-    <form class="form-horizontal" action="/myform" method="GET" role="form" required style="width: 95%;">
+
+    <!-- <div class="alert alert-info" role="alert">status box TODO</div> -->
+
+    <form class="form-horizontal" role="form" required style="width: 90%;">
       <div class="form-group">
-          <label for="message" class="col-sm-2 control-label">Message</label>
-          <div class="col-sm-10">
-              <textarea  name="str" class="form-control" rows="4" name="message"></textarea>
+
+          <div class="col-sm-11 col-sm-offset-1">
+              <textarea id="input" name="str" class="form-control" rows="4" name="message">{:asd1=>{:asd2=>{:asd3=>{:asd4=>"qwe",:asd5=>"web",:service_instance=>"default",:disable_basic_auth=>true}},"cron"=>{"auto_purge"=>false,"notify_failures"=>false},"mailer"=>{"imap"=>{"host"=>"10.10.10.10","port"=>193}}}}</textarea>
           </div>
       </div>
 
-      <div class="form-group">
-          <div class="col-sm-10 col-sm-offset-2">
-              <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+      <div class="form-group ">
+          <div class="col-sm-11 col-sm-offset-1">
+              <pre id="result"></pre>
+              <pre id="result2"></pre>
           </div>
       </div>
 
-      <div class="form-group">
-          <div class="col-sm-10 col-sm-offset-2">
-              <! Will be used to display an alert to the user>
-          </div>
-      </div>
     </form>
   </body>
 </html>
