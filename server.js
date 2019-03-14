@@ -2,10 +2,10 @@ var express = require("express");
 
 var app = express();
 var router = express.Router();
-var path = __dirname + '/views/';
+var path = __dirname + '/public/';
 
 // serve files from the directory
-app.use(express.static('views'));
+app.use(express.static('public'));
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
