@@ -2,10 +2,12 @@ var express = require("express");
 
 var app = express();
 var router = express.Router();
-var path = __dirname + '/public/';
+var path = require('path')
+
 
 // serve files from the directory
-app.use(express.static('public'));
+process.env.PWD = process.cwd();
+app.use(express.static(path.join(process.env.PWD, 'public')));
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
