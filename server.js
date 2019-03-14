@@ -32,6 +32,6 @@ app.use("/",router);
 //});
 
 // start the express web server listening
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
   console.log("Live at Port 3000");
 });
