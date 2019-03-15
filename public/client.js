@@ -5,12 +5,6 @@ console.debug('client.js: script start');
 function rubyhash2json(str) {
   console.debug('rubyhash2json(str) function start');
 
-
-  //extra remove
-
-  str = str.replace(/^(.*?) Emitting \w* event: (.*)/g, '$2');
-
-
   console.debug(str);
     // replace symbol {:symbol=> to {"symbol"=>
   str = str.replace(/(([{,]\s*)[:]([^>\s\[\]]+)|([{,]\s*)([0-9]+\.?[0-9]*))\s*=>/g, '$2$4"$3$5"=>');
@@ -70,6 +64,21 @@ function syntaxHighlight(json) {
   });
 }
 
+function clean_rubbish(str){
+  console.debug('clean_rubbish(str) function start');
+
+  //extra  remove rubbish before { and after }
+  var pattern = /^(.*?)({.*})(.*)/g;
+
+  console.log('test: '+!str.match(pattern));
+
+  // if invalid
+  if(!str.match(pattern)){
+    return !str.match(pattern)
+  }
+
+  return str = str.replace(pattern, '$2');
+}
 
 function split_lines(output_text, str) {
   console.debug('split_lines(str) function start');
@@ -82,7 +91,19 @@ function split_lines(output_text, str) {
   console.log('lines:'+lines);
 
   for (var i = 0; i < lines.length; i++) {
-    var str = rubyhash2json(lines[i]);
+
+    var str = lines[i];
+    str = clean_rubbish(str);
+
+    // if invalid goes to the next line
+    if(str === true) {
+      console.log('line is invalid: '+str);
+      continue;
+    }
+    console.log('str_rubish: '+str);
+
+    str = rubyhash2json(str);
+
     str = JSON.parse(str);
     str = JSON.stringify(str, null, 2);
 
