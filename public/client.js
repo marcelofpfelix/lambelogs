@@ -70,7 +70,7 @@ function clean_rubbish(str){
   //extra  remove rubbish before { and after }
   var pattern = /^(.*?)({.*})(.*)/g;
 
-  console.log('test: '+!str.match(pattern));
+  console.debug('test: '+!str.match(pattern));
 
   // if invalid
   if(!str.match(pattern)){
@@ -88,7 +88,7 @@ function split_lines(output_text, str) {
 
   output_text.innerHTML = "";
   var lines = str.split(/\n/);
-  console.log('lines:'+lines);
+  console.debug('lines:'+lines);
 
   for (var i = 0; i < lines.length; i++) {
 
@@ -97,7 +97,7 @@ function split_lines(output_text, str) {
 
     // if invalid goes to the next line
     if(str === true) {
-      console.log('line is invalid: '+str);
+      console.debug('line is invalid: '+str);
       continue;
     }
     console.log('str_rubish: '+str);
