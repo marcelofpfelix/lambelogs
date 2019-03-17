@@ -1,6 +1,32 @@
-pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
-.string { color: green; }
-.number { color: darkorange; }
-.boolean { color: blue; }
-.null { color: magenta; }
-.key { color: red; }
+pre {
+  outline: 2px;
+  padding: 5px;
+  margin: 5px;
+  background-color: hsl(220, 13%,18%);
+  color: hsl(220, 14%, 71%);
+  font-family: 'Fira Mono';
+  /* white-space: pre-wrap; */
+}
+
+
+
+.string { color: hsl(207, 82%, 66%); } /* bue */
+.number { color: hsl(355, 65%, 65%); } /* red */
+.boolean { color: hsl( 29, 54%, 61%); } /* orange */
+.null { color: hsl(286, 60%, 67%); } /* purple */
+.key { color: hsl( 95, 38%, 62%); font-weight: bold;} /* green */
+
+html {
+  font-size: 14px;
+}
+
+
+// Colors -----------------------------------
+@hue-1:   hsl(187, 47%, 55%); // <-cyan
+@hue-2:   hsl(207, 82%, 66%); // <-blue
+@hue-3:   hsl(286, 60%, 67%); // <-purple
+@hue-4:   hsl( 95, 38%, 62%); // <-green
+
+@hue-5:   hsl(355, 65%, 65%); // <-red 1
+
+@hue-6:   hsl( 29, 54%, 61%); // <-orange 1

@@ -38,11 +38,6 @@ function rubyhash2json(str) {
   return str;
 }
 
-
-function write_output2(inp) {
-  document.body.appendChild(document.createElement('pre')).innerHTML = inp;
-}
-
 function syntaxHighlight(json) {
   console.debug('syntaxHighlight(json) function start');
 
@@ -64,82 +59,84 @@ function syntaxHighlight(json) {
   });
 }
 
-function clean_rubbish(str){
+function clean_rubbish(output_text, str){
   console.debug('clean_rubbish(str) function start');
 
   //extra  remove rubbish before { and after }
   var pattern = /^(.*?)({.*})(.*)/g;
 
   console.debug('test: '+!str.match(pattern));
-
+  output_text.innerHTML += ': '+str.replace(pattern, '$1 | $3');
   // if invalid
   if(!str.match(pattern)){
+
     return !str.match(pattern)
   }
 
   return str = str.replace(pattern, '$2');
 }
 
-function split_lines(output_text, str) {
+function process(output_text, str) {
   console.debug('split_lines(str) function start');
 
   var output = [];
   var outputText = [];
 
+  // clean output div
   output_text.innerHTML = "";
+
+  //split string per /\n/
   var lines = str.split(/\n/);
   console.debug('lines:'+lines);
 
   for (var i = 0; i < lines.length; i++) {
-
     var str = lines[i];
-    str = clean_rubbish(str);
+
+    output_text.innerHTML += '# '+(i+1);
+    str = clean_rubbish(output_text, str);
 
     // if invalid goes to the next line
     if(str === true) {
-      console.debug('line is invalid: '+str);
+      console.debug('line is invalid: '+str+'\n');
       continue;
     }
-    console.log('str_rubish: '+str);
+    else {
+
+    }
+
+    console.debug('str_rubish: '+str);
 
     str = rubyhash2json(str);
 
-    str = JSON.parse(str);
+    try {
+      str = JSON.parse(str);
+    } catch(e) {
+      console.debug('line is invalid: '+e+str);
+      output_text.innerHTML += ': '+e+str+'\n';
+      continue;
+    }
+
     str = JSON.stringify(str, null, 2);
 
-    // only push this line if it contains a non whitespace character.
-    // if (/\S/.test(lines[i])) {
-    //   outputText.push('">>>>' + $.trim(lines[i]) + '<<<<"');
-    //   output.push($.trim(lines[i]));
-    // }
-    output_text.innerHTML += '\n#################################################\n';
-    output_text.innerHTML += '#                       '+i;
-    output_text.innerHTML += '\n#################################################\n';
-    output_text.innerHTML += syntaxHighlight(str);
+    output_text.innerHTML += '\n################################################################################\n';
+    output_text.innerHTML += syntaxHighlight(str)+'\n';
+    output_text.innerHTML += '################################################################################\n';
   }
-  console.log(str);
+
+    //$('.alert').removeClass('alert-info').addClass('alert-success').text('Done!')
   return str;
-}
-
-
-function process(input_text, output_text) {
-  var outputText = [];
-  outputText = split_lines(output_text, input_text.value);
-
-  //$('.alert').removeClass('alert-info').addClass('alert-success').text('Done!')
-
 }
 
   // event listener to check when the DOM finished loading.
 document.addEventListener('DOMContentLoaded', function () {
 
   function timer() {
-    clearTimeout(timer_id), timer_id = setTimeout(function() { process(input_text, output_text) }, 200)
+    clearTimeout(timer_id), timer_id = setTimeout(function() { process(output_text, input_text.value) }, 200)
   }
 
   var timer_id, input_text = document.querySelector("#input");
   var output_text = document.querySelector("#result");
 
-  input_text.addEventListener("input", timer, !1), process(input_text, output_text), input_text.select()
-  process(input_text, output_text);
+  input_text.addEventListener("input", timer, !1), process(output_text, input_text.value), input_text.select()
+  //process(output_text, input_text.value);
 });
