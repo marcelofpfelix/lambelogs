@@ -8,8 +8,6 @@ pre {
   /* white-space: pre-wrap; */
 }
 
-
-
 .string { color: hsl(207, 82%, 66%); } /* bue */
 .number { color: hsl(355, 65%, 65%); } /* red */
 .boolean { color: hsl( 29, 54%, 61%); } /* orange */
@@ -19,14 +17,3 @@ pre {
 html {
   font-size: 14px;
 }
-
-
-// Colors -----------------------------------
-@hue-1:   hsl(187, 47%, 55%); // <-cyan
-@hue-2:   hsl(207, 82%, 66%); // <-blue
-@hue-3:   hsl(286, 60%, 67%); // <-purple
-@hue-4:   hsl( 95, 38%, 62%); // <-green
-
-@hue-5:   hsl(355, 65%, 65%); // <-red 1
-
-@hue-6:   hsl( 29, 54%, 61%); // <-orange 1
