@@ -1,4 +1,4 @@
-# orchestify
+# orchestrify
 
 * clean logs
 * convert ruby hash to json
