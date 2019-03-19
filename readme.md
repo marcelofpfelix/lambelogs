@@ -4,6 +4,12 @@
 * convert ruby hash to json
 * print pretty json
 
+Progress bar:
+* https://kimmobrunfeldt.github.io/progressbar.js/
+* https://www.geeksforgeeks.org/creating-progress-bar-using-javascript/
+* https://stackoverflow.com/questions/18981909/how-to-show-a-running-progress-bar-while-page-is-loading
+* https://loading.io/progress/
+
 
 references
 * https://www.codementor.io/codeforgeek/build-website-from-scratch-using-expressjs-and-bootstrap-du107sby7
