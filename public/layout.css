@@ -8,11 +8,11 @@ pre {
   /* white-space: pre-wrap; */
 }
 
-.string { color: hsl(207, 82%, 66%); } /* bue */
-.number { color: hsl(355, 65%, 65%); } /* red */
-.boolean { color: hsl( 29, 54%, 61%); } /* orange */
-.null { color: hsl(286, 60%, 67%); } /* purple */
-.key { color: hsl( 95, 38%, 62%); font-weight: bold;} /* green */
+.string { color: hsl(207, 82%, 66%); }                /* blue   */
+.number { color: hsl(355, 65%, 65%); }                /* red    */
+.boolean { color: hsl( 29, 54%, 61%); }               /* orange */
+.null { color: hsl(286, 60%, 67%); }                  /* purple */
+.key { color: hsl( 95, 38%, 62%); font-weight: bold;} /* green  */
 
 html {
   font-size: 14px;
