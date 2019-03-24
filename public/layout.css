@@ -1,11 +1,23 @@
 pre {
-  outline: 2px;
-  padding: 5px;
+  border: 2px solid #212128;
   margin: 5px;
-  background-color: hsl(220, 13%,18%);
+  background-color: #2d2e38;
   color: hsl(220, 14%, 71%);
-  font-family: 'Fira Mono';
   /* white-space: pre-wrap; */
+}
+
+.form-control {
+  border: 2px solid #212128;
+  margin: 5px;
+  background-color: #2d2e38;
+  color: hsl(220, 14%, 71%);
+  font-family: monospace;
+  font-size: 12px;
+  /* white-space: pre-wrap; */
+}
+.form-control:focus {
+  background-color: #2d2e38;
+  color: hsl(220, 14%, 71%);
 }
 
 .string { color: hsl(207, 82%, 66%); }                /* blue   */
@@ -16,4 +28,22 @@ pre {
 
 html {
   font-size: 14px;
+}
+
+.progressbar-outer {
+  border-radius: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: hsl(355, 65%, 65%);
+}
+
+.progressbar {
+  border-radius: 5px;
+  height: 10px;
+  background-color: hsl( 95, 38%, 62%);
+}
+
+body {
+  background: #292d30 !important;
+  color: hsl(220, 14%, 71%);
 }
